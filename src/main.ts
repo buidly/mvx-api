@@ -115,7 +115,7 @@ async function bootstrap() {
       transport: Transport.RMQ,
       options: {
         urls: [apiConfigService.getRabbitmqUrl()],
-        queue: 'api-process-nfts',
+        queue: 'azure-api-process-nfts',
         noAck: false,
         prefetchCount: apiConfigService.getNftProcessParallelism(),
         queueOptions: {
@@ -123,7 +123,7 @@ async function bootstrap() {
           // arguments: {
           //   'x-single-active-consumer': true,
           // },
-          deadLetterExchange: 'api-process-nfts-dlq',
+          deadLetterExchange: 'azure-api-process-nfts-dlq',
         },
       },
     });

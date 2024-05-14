@@ -34,7 +34,7 @@ export class NftWorkerService {
     message.identifier = nft.identifier;
     message.settings = settings;
 
-    this.client.send({ cmd: 'api-process-nfts' }, message).subscribe();
+    this.client.send({ cmd: 'azure-api-process-nfts' }, message).subscribe();
 
     return true;
   }

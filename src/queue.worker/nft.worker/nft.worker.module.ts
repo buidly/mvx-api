@@ -25,14 +25,14 @@ import { NftThumbnailModule } from './queue/job-services/thumbnails/nft.thumbnai
           transport: Transport.RMQ,
           options: {
             urls: [configService.getRabbitmqUrl()],
-            queue: 'api-process-nfts',
+            queue: 'azure-api-process-nfts',
             prefetchCount: configService.getNftProcessParallelism(),
             queueOptions: {
               durable: true,
               // arguments: {
               //   'x-single-active-consumer': true,
               // },
-              deadLetterExchange: 'api-process-nfts-dlq',
+              deadLetterExchange: 'azure-api-process-nfts-dlq',
             },
           },
         });

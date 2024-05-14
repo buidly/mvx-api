@@ -71,7 +71,7 @@ export class NftQueueController {
     return result;
   }
 
-  @MessagePattern({ cmd: 'api-process-nfts' })
+  @MessagePattern({ cmd: 'azure-api-process-nfts' })
   async onNftCreated(@Payload() data: NftMessage, @Ctx() context: RmqContext) {
     const channel = context.getChannelRef();
     const message = context.getMessage();
